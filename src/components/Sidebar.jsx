@@ -1,16 +1,12 @@
 /* eslint-disable react/prop-types */
-import AddFriendForm from "./AddFriendForm"
-import Friend from "./Friend"
+import AddFriendForm from './AddFriendForm';
+import FriendList from './FriendList';
 
-export default function Sidebar({friends}) {
-  return (
-    <div className="sidebar">
-      <ul>
-      {friends.map(item => {
-        return <Friend key={item.id} {...item}/>
-      })}
-    </ul>
-    <AddFriendForm/>
-    </div>
-  )
+export default function Sidebar({ friends, onAddFriend, onSetActiveFriend,onOpenSplitForm }) {
+	return (
+		<div className="sidebar">
+			<FriendList friends={friends} onSetActiveFriend={onSetActiveFriend} onOpenSplitForm={onOpenSplitForm} />
+			<AddFriendForm onAddFriend={onAddFriend} />
+		</div>
+	);
 }
