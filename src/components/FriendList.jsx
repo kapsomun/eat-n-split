@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
-import Friend from './Friend';
 
-export default function FriendList({ friends, onSetActiveFriend }) {
+export default function FriendList({ children}) {
 	return (
 		<ul>
-			{friends.map((item) => {
-				return <Friend key={item.id} {...item} onSetActiveFriend={onSetActiveFriend} />;
-			})}
+			{children}
 		</ul>
 	);
 }

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Button from './Button';
 
-export default function SplitBillForm({ activeFriend, setIsOpenSplitForm, setBalance }) {
+export default function SplitBillForm({ activeFriend, setBalance }) {
 	const [bill, setBill] = useState('');
 	const [yourExpense, setYourExpense] = useState('');
 	const [friendExpense, setFriendExpense] = useState('');
@@ -20,7 +20,6 @@ export default function SplitBillForm({ activeFriend, setIsOpenSplitForm, setBal
 		console.log(expense);
 		setBalance(id, expense);
 
-		setIsOpenSplitForm(false);
 	}
 
 	return (
